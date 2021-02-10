@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 1</title>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+</head>
+
+
+<body>
+    <div id=main></div>
+    
+    <script>
+        async function getAllCountry(){
+            try {
+            
+            var country= await fetch("https://restcountries.eu/rest/v2/all");
+            var data =await country.json();
+            console.log(data)
+
+            }catch(error){
+                console.log(error)
+            }
+        }
+        getAllCountry();
+
+            
+            
+            var image = document.getElementById("img");
+            img.src= data[0].flag;
+            var startRow="<div class='row'>";
+            var card= '<div class="col-md-4"> <div class="thumbnail">';
+            var cardEnd = '</div> </div>';
+            var endRow = "</div>";
+            var i=0;
+            var start="";
+            var end="";
+            var toAppend="";
+            data.forEach(countrydata=> console.log(data))
+
+                
+                
+            
+            
+    </script>
+
+
+
+    <script>
+        var g=document.createElement("div");
+        g.setAttribute("class","row row-col-1 row-cols-md-3 g-4");
+
+        for(let i=0;i<10;i++)
+        {
+        var mydiv=document.createElement("div");
+        mydiv.setAttribute("class","col");
+
+        var heading=document.createElement("div");
+        heading.setAttribute("id","heading");
+        heading.setAttribute("class","card h-100");
+        
+        var bod=document.createElement("div");
+        bod.setAttribute("class","card-body");
+        
+        var heading1=document.createElement("div");
+        heading1.setAttribute("class","card-title");
+        heading1.innerText="Card title";
+
+        var parah=document.createElement("p")
+        parah.setAttribute("class","card-text");
+        parah.innerText="Some quick example text to build on the card title and make up the bulk of the card's content.";
+        
+        var a=document.createElement("a");
+        a.setAttribute("class","btn btn-primary");
+        a.innerText="Go somewhere"
+
+        heading.style.width= 18+"rem";
+        //img src
+        heading.innerText="Country name";
+
+
+        
+        parah.appendChild(a);
+        heading1.appendChild(parah);
+        bod.appendChild(heading1);
+        heading.appendChild(bod);
+
+        mydiv.appendChild(heading);
+        g.appendChild(mydiv);
+        document.body.appendChild(g);
+        }
+    </script>
+</body>
+
+</html>
